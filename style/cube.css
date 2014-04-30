@@ -1,0 +1,96 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	overflow: hidden;
+
+	font-family: "Helvetica Neue", "Open Sans";
+	font-weight: 100;
+}
+
+#container {
+	perspective: 50px;
+	-webkit-perspective: 50px;
+	-moz-perspective: 50px;
+	-ms-perspective: 50px;
+
+	transform-origin: 50% 100%;
+	-webkit-transform-origin: 50% 100%;
+	-moz-transform-origin: 50% 100%;
+	-ms-transform-origin: 50% 100%;
+
+	pointer-events: none;
+
+	opacity: 0.55;
+}
+
+/*************
+	Cubes
+*************/
+
+/* Cube design technique copyright Keith Clark: http://blog.keithclark.co.uk/wp-content/uploads/2013/10/demos/4/ */ 
+
+.cube, .face {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	position: absolute;
+
+	background: #040a14;
+}
+
+.cube {
+	-webkit-transform: translateZ(1100px);
+}
+	  
+.cube .face {
+	width: 7em;
+	height: 7em;
+	margin: -7em;
+}
+
+.cube .face:nth-child(1) {
+	-webkit-transform: translateZ(3.5em);
+	-moz-transform: translateZ(7em);
+	transform: translateZ(3.5em);
+}
+.cube .face:nth-child(2) {
+	-webkit-transform: translateZ(-3.5em) rotateY(180deg);
+	-moz-transform: translateZ(-7em) rotateY(180deg);
+	transform: translateZ(-3.5em) rotateY(180deg);
+}
+.cube .face:nth-child(3) {
+	-webkit-transform: translateX(-3.5em) rotateY(-90deg);
+	-moz-transform: translateX(-7em) rotateY(-90deg);
+	transform: translateX(-3.5em) rotateY(-90deg);
+}
+.cube .face:nth-child(4) {
+	-webkit-transform: translateX(3.5em) rotateY(90deg);
+	-moz-transform: translateX(7em) rotateY(90deg);
+	transform: translateX(3.5em) rotateY(90deg);
+}
+.cube .face:nth-child(5) {
+	-webkit-transform: translateY(3.5em) rotateX(-90deg);
+	-moz-transform: translateY(7em) rotateX(-90deg);
+	transform: translateY(3.5em) rotateX(-90deg);
+}
+.cube .face:nth-child(6) {
+	-webkit-transform: translateY(-3.5em) rotateX(90deg);
+	-moz-transform: translateY(-7em) rotateX(90deg);
+	transform: translateY(-3.5em) rotateX(90deg);
+}
+
+.smallCube {
+	-webkit-transform-origin: 50% 50% -400px;
+
+	margin-top: -10em;
+
+	font-size: 3px;
+}
+
+.smallCube .face {
+	background: #ff60a0;
+}
